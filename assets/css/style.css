@@ -4,7 +4,7 @@
 * {
     margin: 0;
     padding: 0;
-    text-decoration: none;
+    text-decoration: none !important;
     box-sizing: border-box;
     list-style: none;
 }
@@ -59,7 +59,7 @@
 }
 
 .pt-124 {
-    padding-top: 0px;
+    padding-top: 50px;
 }
 
 .pt-44 {
@@ -107,8 +107,7 @@ ul li a {
 
 .card-shadow:hover {
     box-shadow: 0px 9px 50px 0px #0000001F;
-    border-color: transparent;
-    border: 0.5;
+    border: 0.5px #B6B6B6 solid;
     transition: all 300ms linear;
 }
 
@@ -308,12 +307,29 @@ ul {
 .max-w-385 {
     max-width: 385px;
 }
-
+.max-w-400{
+    max-width: 400px;
+}
 .bg-border {
-    border: #A557EA 1px solid;
+    position: relative;
+    border: 1px solid transparent;
     border-radius: 16px;
     padding: 12px;
-    transition: all 300ms linear;
+    background-color: white;
+    /* transition: all 300ms linear; */
+    background-clip: padding-box;
+}
+
+.bg-border::after {
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    background: linear-gradient(to right, #A854E9, #4F91FC);
+    z-index: -1;
+    border-radius: 16px;
+    content: '';
 }
 
 .bg-border:hover {
@@ -332,6 +348,8 @@ ul {
     position: absolute;
     bottom: 0;
     left: 0;
+    right: 0;
+    margin: 0 auto;
     width: 0px;
     height: 1px;
     /* border: 1px solid; */
